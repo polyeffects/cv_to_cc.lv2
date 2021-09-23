@@ -1,9 +1,9 @@
 #!/usr/bin/make -f
-# OPTIMIZATIONS ?= -msse -msse2 -mfpmath=sse -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
-OPTIMIZATIONS ?= -mtune=cortex-a53 -funsafe-math-optimizations -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -fvisibility=hidden -fdata-sections -ffunction-sections  -DNDEBUG # -fopt-info-vec-optimize
+OPTIMIZATIONS ?= -msse -msse2 -mfpmath=sse -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -DNDEBUG
+# OPTIMIZATIONS ?= -mtune=cortex-a53 -funsafe-math-optimizations -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only -fvisibility=hidden -fdata-sections -ffunction-sections  -DNDEBUG # -fopt-info-vec-optimize
 PREFIX ?= /usr
 CFLAGS ?= $(OPTIMIZATIONS) -Wall
-URI_PREFIX='"http://polyeffects.com/lv2/cv_to_cc"'
+URI_PREFIX='"http://polyeffects.com/lv2/cv_to_note"'
 
 PKG_CONFIG?=pkg-config
 STRIP?=strip
@@ -14,8 +14,8 @@ poly_filter_VERSION?=$(shell git describe --tags HEAD 2>/dev/null | sed 's/-g.*$
 
 LV2DIR ?= $(PREFIX)/lib/lv2
 LOADLIBES=-lm
-LV2NAME=cv_to_cc
-BUNDLE=cv_to_cc.lv2
+LV2NAME=cv_to_note
+BUNDLE=cv_to_note.lv2
 BUILDDIR=build/
 targets=
 
